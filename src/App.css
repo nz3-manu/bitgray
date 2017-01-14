@@ -1,0 +1,39 @@
+aside {
+  margin-top: 50px;
+  border: 3px solid #676767;
+  border-radius: 11px;
+  
+}
+header{
+  background: #fe4419;
+  color: white;
+  padding: 15px;
+}
+header h1 {
+  margin: 0px;
+}
+
+footer {
+  padding: 8px 0px;
+  margin-top: 5px;
+  border-top: 5px solid #676767;
+}
+.album {
+  width: 100%;
+  height: auto;
+}
+.album__effect{
+  cursor: pointer;
+}
+.album__effect:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.overflow{
+  overflow: hidden;
+}
+.displayFlex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
