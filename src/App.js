@@ -68,9 +68,9 @@ var App = React.createClass({
 
                 <div className="container">
                     <section className="main row overflow">
-                        <aside className="col-xs-12 col-sm-5">
+                        <aside className="col-xs-12 col-sm-6 col-md-4">
                           <div className="main__information">
-                            <h3>INFORMACION PERSONAL</h3>
+                            <h3>Información</h3>
                           </div>
                             < AsideInformation name={(this.state.users.name)
                                 ? this.state.users.name
@@ -85,7 +85,7 @@ var App = React.createClass({
                                 : ""}/>
                         </aside>
 
-                        <article className="col-xs-12 col-sm-7">
+                        <article className="col-xs-12 col-sm-6 col-md-8">
                             <div className="row overflow ">
                                 {this.state.album.map((album, i)=>{
                                     if (this.state.users.id===album.userId) {
