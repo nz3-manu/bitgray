@@ -1,12 +1,31 @@
 import React from 'react';
 import './App.css';
+import Photo from "./Photo.js";
+import { Router, Route, hashHistory } from 'react-router'
+
+var Header=React.createClass({
+  render:function(){
+    return (
+      <header>
+          <div className="container">
+              <h1>
+                  Bitgray__app
+              </h1>
+          </div>
+      </header>
+    )
+  }
+});
 
 var Album =React.createClass({
+    albumClick:function(){
+      this.props.openPhoto()
+    },
     render: function() {
         return (
             <div className="album col-xs-12 col-sm-6 col-md-4">
                 <div className="album__effect">
-                    <img src="http://lorempixel.com/700/700/" className="img-responsive img-thumbnail" alt=""/>
+                    <img src="http://lorempixel.com/700/700/" className="img-responsive img-thumbnail" alt="" onClick={this.albumClick}/>
                 </div>
                 <div className="album__title"> <h5 className="text-center">{this.props.titleAlbum}</h5></div>
             </div>
@@ -32,6 +51,23 @@ var AsideInformation=React.createClass({
         )
     }
 });
+var Footer=React.createClass({
+  render:function(){
+    return (
+      <footer>
+          <div className="container displayFlex">
+              <h4>
+                  <strong>Prueba tecnica Bitgray app
+                  </strong>
+              </h4>
+              <div className="">
+                  <img src="logo-whitebig.png" width="55px" height="55px" alt="Logo__footer"/>
+              </div>
+          </div>
+      </footer>
+    )
+  }
+});
 
 var App = React.createClass({
     getInitialState: function() {
@@ -50,22 +86,21 @@ var App = React.createClass({
         }).then(albumJson => {
             this.setState({album: albumJson})
         });
+        fetch("http://jsonplaceholder.typicode.com/photos").then(photoJson => photoJson.json(), e => {
+            console.log("Obtención fallida", e);
+        }).then(photoJson => {
+            this.setState({photo: photoJson})
+        });
 
     },
     randomInformation: function() {
         console.log("hola mundo");
+         hashHistory.push("photo");
     },
     render: function() {
         return (
             <div>
-                <header>
-                    <div className="container">
-                        <h1>
-                            Bitgray__app
-                        </h1>
-                    </div>
-                </header>
-
+              <Header/>
                 <div className="container">
                     <section className="main row overflow">
                         <aside className="col-xs-12 col-sm-6 col-md-4">
@@ -89,7 +124,7 @@ var App = React.createClass({
                             <div className="row overflow ">
                                 {this.state.album.map((album, i)=>{
                                     if (this.state.users.id===album.userId) {
-                                      return < Album titleAlbum={album.title} key={i}/>
+                                      return < Album titleAlbum={album.title} key={i} openPhoto={this.randomInformation} />
                                 }
                             })
 }
@@ -98,19 +133,7 @@ var App = React.createClass({
                         </article>
                     </section>
                 </div>
-
-                <footer>
-                    <div className="container displayFlex">
-                        <h4>
-                            <strong>Prueba tecnica Bitgray app
-                            </strong>
-                        </h4>
-                        <div className="">
-                            <img src="logo-whitebig.png" width="55px" height="55px" alt="Logo__footer"/>
-                        </div>
-                    </div>
-                </footer>
-
+                <Footer/>
             </div>
 
         );
