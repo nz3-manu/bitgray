@@ -105,3 +105,20 @@ footer {
 .btnHeight{
   height: 45px;
 }
+/* NOTE: modal */
+.wrap__modal {
+    padding: 10px;
+    width: 812px;
+    height: auto;
+    background-color: white;
+    text-align: center;
+}
+
+.modal__headerCloseBtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__img{
+  padding: 10px 0px;
+}
