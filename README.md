@@ -18,6 +18,6 @@ Se utilizo **React** ya que es una buena herramienta para realizar single page a
 * **bootstrap-css:** Es una buena forma para realizar diseño responsive.
 
 
-### Url app funcional: https://nz3-manu.github.io/MarvelChallenge/
+### Url app funcional: https://nz3-manu.github.io/bitgray/#/
 
 ***
