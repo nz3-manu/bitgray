@@ -67,7 +67,7 @@ var Album = React.createClass({
                                     return (
                                         <div className="album col-xs-12 col-sm-6 col-md-4" key={i}>
                                             <div className="album__effect">
-                                                <Link to={`/photo/${album.id}`} ><img src="http://lorempixel.com/700/700/" className="img-responsive img-thumbnail" alt=""/></Link>
+                                                <Link to={`/photo/${album.id}`} ><img src="imgAlbum.jpeg" className="img-responsive img-thumbnail" alt=""/></Link>
                                             </div>
                                             <div className="album__title">
                                                 <h5 className="text-center">{album.title}</h5>
