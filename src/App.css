@@ -96,3 +96,12 @@ footer {
   color: #0e0e0e;
   background-color: white;
 }
+.photo__header{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 7px;
+}
+.btnHeight{
+  height: 45px;
+}
