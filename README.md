@@ -1,4 +1,4 @@
-Marvel Challenge
+Prueba tecnica Bitgray app
 ===
 
 Para ejecutar esta single page application (SPA), ejecuta en consola los siguientes comandos:
