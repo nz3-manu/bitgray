@@ -26,14 +26,14 @@ var Album = React.createClass({
         return {users: [], album: []}
     },
     componentDidMount: function() {
-        fetch("http://jsonplaceholder.typicode.com/users").then(userJson => userJson.json(), e => {
+        fetch("//jsonplaceholder.typicode.com/users").then(userJson => userJson.json(), e => {
             console.log("Obtención fallida", e);
         }).then(userJson => {
             let longUser = userJson.length
             let randomMethod = Math.floor(Math.random() * (longUser));
             this.setState({users: userJson[randomMethod]})
         });
-        fetch("http://jsonplaceholder.typicode.com/albums").then(albumJson => albumJson.json(), e => {
+        fetch("//jsonplaceholder.typicode.com/albums").then(albumJson => albumJson.json(), e => {
             console.log("Obtención fallida", e);
         }).then(albumJson => {
             this.setState({album: albumJson})

@@ -26,7 +26,7 @@ var Photo = React.createClass({
         }
     },
     componentDidMount: function() {
-        fetch("http://jsonplaceholder.typicode.com/photos").then(photoJson => photoJson.json(), e => {
+        fetch("//jsonplaceholder.typicode.com/photos").then(photoJson => photoJson.json(), e => {
             console.log("Obtención fallida", e);
         }).then(photoJson => {
             console.log(this.props.params.user);
@@ -34,13 +34,15 @@ var Photo = React.createClass({
         });
     },
     openModal: function(currentInformation) {
+      if (screen.width > 900) {
         this.currentInfo =currentInformation
         this.setState({
             modal: {
                 modalIsOpen: true,
             }
         });
-            console.log(this.state.currentInfo);
+      }
+
     },
     closeModal: function() {
       console.log(this.state.currentInfo);
@@ -84,9 +86,7 @@ var Photo = React.createClass({
                                             <img src={photo.url} onClick={this.openModal.bind(null,{img:photo.url,title:photo.title})} className="img-responsive img-thumbnail" alt=""/>
                                         </div>
                                         <div className="album__title">
-                                            <h5 className="text-center">
-                                                {photo.title}
-                                            </h5>
+                                            <h5 className="text-center">{photo.title}</h5>
                                         </div>
                                     </div>
                                 </div>
